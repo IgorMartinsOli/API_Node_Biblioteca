@@ -13,5 +13,9 @@
     "mongoose": "^5.13.7",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0"
   }
 }
