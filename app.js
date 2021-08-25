@@ -16,9 +16,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 //db
 const dbConnection = require('./config/dataBase')();
 
+app.use((req, res, next) =>{
+    console.log("Request time:" + Date.now());
+    next();
+});
+
 //config de rotas
 var booksRouter = require('./routes/books');
+var usersRouter = require('./routes/users');
 app.use('/livros', booksRouter);
+app.use('/users', usersRouter);
 
 app.use(function (req, res, next){
     let err = new Error("Not Found");
